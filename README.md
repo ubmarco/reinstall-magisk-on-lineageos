@@ -1,3 +1,9 @@
+This is a fork of https://github.com/NicolasWebDev/reinstall-magisk-on-lineageos.
+
+Diffs:
+- Install python dev without sudo
+- Download from https://download.lineage.microg.org
+
 # Reinstall Magisk on Lineageos
 
 This little bash script is used to reinstall magisk, which gets uninstalled after each LineageOS update.
