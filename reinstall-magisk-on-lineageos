@@ -30,16 +30,8 @@ get_device_name() {
     adb -s "$PHONE_ADB_SERIAL_NUMBER" shell getprop ro.lineage.device | tr -d '\n'
 }
 
-get_device_downloads_page() {
-    echo "https://download.lineageos.org/$(get_device_name)"
-}
-
 get_build_url() {
-    curl --no-progress-meter "$(get_device_downloads_page)" |
-        grep --only-matching --ignore-case \
-            "https://mirrorbits.lineageos.org/[^\"]*"$(
-            )"$(get_lineage_version)-signed.zip" |
-        head -1
+    echo "https://download.lineage.microg.org/$(get_device_name)/lineage-$(get_lineage_version).zip"
 }
 
 download_latest_lineageos_build() {
